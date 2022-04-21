@@ -9,18 +9,6 @@
         "sshAuthorizedKeys": [
           "sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIODNlJoGkls45ShQmcKYe1jbOl9HC7lDsAh6Dd0WT1XS"
         ]
-      },
-      {
-        "groups": [
-          "wheel",
-          "plugdev"
-        ],
-        "homeDir": "/home/lucas",
-        "name": "lucas",
-        "sshAuthorizedKeys": [
-          "sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIODNlJoGkls45ShQmcKYe1jbOl9HC7lDsAh6Dd0WT1XS"
-        ],
-        "shell": "/bin/bash"
       }
     ]
   }
