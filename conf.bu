@@ -1,0 +1,13 @@
+variant: fcos
+version: 1.4.0
+passwd:
+  users:
+    - name: core
+      ssh_authorized_keys:
+        - sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF17ubIkcZ1Z9YamYKH/OZTP+8QlsIyUD+lZ5/IAsPc9
+    - name: lucas
+      groups:
+        - wheel
+        - sudo
+      ssh_authorized_keys:
+        - sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF17ubIkcZ1Z9YamYKH/OZTP+8QlsIyUD+lZ5/IAsPc9
