@@ -7,7 +7,6 @@ systemd:
       - name: 10-sshd-port.conf
         contents: |
           [Socket]
-          ListenStream=
           ListenStream=226         
 passwd:
   users:
@@ -17,3 +16,35 @@ passwd:
         - sudo
       ssh_authorized_keys:
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF17ubIkcZ1Z9YamYKH/OZTP+8QlsIyUD+lZ5/IAsPc9
+storage:
+  files:
+    - path: /etc/hostname
+      mode: 0644
+      contents:
+        inline: |
+          srv1
+    - path: /etc/profile.d/systemd-pager.sh
+      mode: 0644
+      contents:
+        inline: |
+          # Tell systemd to not use a pager when printing information
+          export SYSTEMD_PAGER=cat
+    - path: /etc/sysctl.d/20-silence-audit.conf
+      mode: 0644
+      contents:
+        inline: |
+          # Raise console message logging level from DEBUG (7) to WARNING (4)
+          # to hide audit messages from the interactive console
+          kernel.printk=4
+  disks:
+    - device: /dev/vda
+      wipe_table: true
+      partitions:
+        - number: 1
+          label: swap
+          size_mib: 1430
+  filesystems:
+    - device: /dev/disk/by-partlabel/swap
+      format: swap
+      wipe_filesystem: true
+      with_mount_unit: true
