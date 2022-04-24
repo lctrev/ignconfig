@@ -10,6 +10,8 @@ systemd:
           ListenStream=226         
 passwd:
   users:
+    - name: core
+      password_hash: $y$j9T$dwpOU87VUStXA1DsWllqX/$4GmP8ei6lTT0PF1/bzwd2RTVUmhCwOmeimArYX29vJ5
     - name: lucas
       groups:
         - wheel
@@ -23,13 +25,6 @@ storage:
       contents:
         inline: |
           srv1
-  disks:
-    - device: /dev/vda
-      wipe_table: true
-      partitions:
-        - number: 1
-          label: swap
-          size_mib: 1430
   filesystems:
     - device: /dev/disk/by-partlabel/swap
       format: swap

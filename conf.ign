@@ -5,6 +5,10 @@
   "passwd": {
     "users": [
       {
+        "name": "core",
+        "passwordHash": "$y$j9T$dwpOU87VUStXA1DsWllqX/$4GmP8ei6lTT0PF1/bzwd2RTVUmhCwOmeimArYX29vJ5"
+      },
+      {
         "groups": [
           "wheel",
           "sudo"
@@ -17,19 +21,6 @@
     ]
   },
   "storage": {
-    "disks": [
-      {
-        "device": "/dev/vda",
-        "partitions": [
-          {
-            "label": "swap",
-            "number": 1,
-            "sizeMiB": 1430
-          }
-        ],
-        "wipeTable": true
-      }
-    ],
     "files": [
       {
         "path": "/etc/hostname",
